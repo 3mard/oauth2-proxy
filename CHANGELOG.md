@@ -25,6 +25,7 @@
 
 ## Changes since v5.1.1
 
+- [#533](https://github.com/oauth2-proxy/oauth2-proxy/pull/487) Set up code coverage within Travis for Code Climate (@JoelSpeed)
 - [#487](https://github.com/oauth2-proxy/oauth2-proxy/pull/487) Switch flags to PFlag to remove StringArray (@JoelSpeed)
 - [#484](https://github.com/oauth2-proxy/oauth2-proxy/pull/484) Replace configuration loading with Viper (@JoelSpeed)
 - [#499](https://github.com/oauth2-proxy/oauth2-proxy/pull/499) Add `-user-id-claim` to support generic claims in addition to email (@holyjak)

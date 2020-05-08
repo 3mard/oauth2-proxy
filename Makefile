@@ -5,6 +5,11 @@ VERSION := $(shell git describe --always --dirty --tags 2>/dev/null || echo "und
 REGISTRY ?= quay.io/oauth2-proxy
 .NOTPARALLEL:
 
+
+ifeq ($(COVER),true)
+TESTCOVER ?= -coverprofile c.out
+endif
+
 .PHONY: all
 all: lint $(BINARY)
 
@@ -57,7 +62,7 @@ docker-push-all: docker-push
 
 .PHONY: test
 test: lint
-	GO111MODULE=on $(GO) test -v -race ./...
+	GO111MODULE=on $(GO) test $(TESTCOVER) -v -race ./...
 
 .PHONY: release
 release: lint test
